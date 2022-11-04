@@ -16,3 +16,5 @@ print(obj1:Output())
 -- C# GameObject obj = new GameObject("")
 local go = CS.UnityEngine.GameObject("LuaCreatGo")
 go:AddComponent(typeof(CS.UnityEngine.BoxCollider))
+
+
