@@ -64,10 +64,15 @@ public class XLuaEnv
     }
     #endregion
 
-    #region Run Lua
+    #region 运行Lua语句，获取Lua的Global表
     public object[] DoString(string code)
     {
         return luaEnv.DoString(code);
-    } 
+    }
+
+    public LuaTable Global
+    {
+        get { return luaEnv.Global; }
+    }
     #endregion
 }
