@@ -4,8 +4,10 @@ using UnityEngine;
 using XLua;
 
 public delegate void OneStringParams(string name);
-public delegate void OneStringReturn();
 public delegate void TransSelf(LuaTable table);
+//针对结构体调用后添加
+public delegate void OneStringReturn();
+[CSharpCallLua]
 public delegate void TransMy(LuaCore table);
 
 //Lua的Table导出到C#的结构体，可以实现C#运行时无GC
@@ -27,7 +29,7 @@ public class CSharpCallTable : MonoBehaviour
     void Start()
     {
         XLuaEnv.Instance.DoString("return require('L2C/CSharpCallTable')");
-
+        UseLuaStruct();
         //UseLuaTable();
     }
 
